@@ -21,7 +21,6 @@ function addEmployee(answers) {
   }
 }
 function handleAnswers(answers) {
-  console.log(answers);
   const newEmployee = new Manager(
     answers.name,
     answers.employeeId,
@@ -30,7 +29,7 @@ function handleAnswers(answers) {
   );
 
   teamMembers.push(newEmployee);
-  console.log(teamMembers);
+  //console.log(teamMembers);
   inquirer.prompt(questions.addEmployee).then(addEmployee);
 }
 function handleEngineer(answers) {
@@ -43,7 +42,7 @@ function handleEngineer(answers) {
 function handleIntern(answers) {
   const newEmployee = new Intern(answers.name, answers.employeeId, answers.email, answers.school);
   teamMembers.push(newEmployee);
-  console.log(teamMembers);
+  //console.log(teamMembers);
   inquirer.prompt(questions.addEmployee).then(addEmployee);
 }
 inquirer.prompt(questions.managerQuestions).then(handleAnswers);
